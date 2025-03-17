@@ -29,7 +29,7 @@ const Body = () => {
 
     useEffect(() => {
         fetchProductDetail();
-    }, [1]);
+    }, []);
 
     return (
         <Box className="Body">
