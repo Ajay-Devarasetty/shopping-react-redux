@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 const Body = () => {
     const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
-    const navigate = useNavigate();
 
     const fetchProductDetail = async () => {
         try {

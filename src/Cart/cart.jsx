@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import "./index.scss";
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
