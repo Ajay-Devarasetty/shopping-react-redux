@@ -23,7 +23,7 @@ const Cart = () => {
         let payload = {
             id : id
         }
-        {quantity>1?  dispatch(decreaseQuantity(payload)) : dispatch(removeFromCart(payload)) } 
+        quantity>1?  dispatch(decreaseQuantity(payload)) : dispatch(removeFromCart(payload)) 
     }
     const removeItem = (id)=>{
         let payload = {

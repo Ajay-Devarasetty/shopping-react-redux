@@ -4,7 +4,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addCart,addWishlist } from "../Redux/Reducers/shoppingReducer";
-import { useNavigate } from "react-router-dom";
 
 const Body = () => {
     const [products, setProducts] = useState([]);
