@@ -4,10 +4,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addCart,addWishlist } from "../Redux/Reducers/shoppingReducer";
+import { useNavigate } from "react-router-dom";
 
 const Body = () => {
     const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const fetchProductDetail = async () => {
         try {
@@ -18,12 +20,25 @@ const Body = () => {
         }
     };
 
-    const addWishlistItem = (id) => {
-        dispatch(addWishlist(id));
+    const addWishlistItem = (item) => {
+        let payload={
+            id:item.id, 
+            title : item.title,
+            price : item.price,
+            image : item.image
+        }
+        dispatch(addWishlist(payload));
     }
 
-    const addCartItem = (id) => {
-        dispatch(addCart(id));
+    const addCartItem = (item) => {
+        let payload = {
+            id : item.id,
+            title : item.title,
+            price : item.price,
+            image : item.image,
+            quantity : 1
+        }
+        dispatch(addCart(payload));
 
     }
 
@@ -42,14 +57,14 @@ const Body = () => {
                                 <Button
                                     variant="contained"
                                     color="secondary"
-                                    onClick={() => addWishlistItem(item.id)}
+                                    onClick={() => addWishlistItem(item)}
                                 >
                                     Wishlist
                                 </Button>
                                 <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={() => addCartItem(item.id)}
+                                    onClick={() => addCartItem(item)}
                                 >
                                     Cart
                                 </Button>
